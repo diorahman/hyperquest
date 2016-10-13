@@ -55,7 +55,7 @@ function hyperquest (uri, opts, cb, extra) {
             var e = new Error('ETIMEDOUT');
             e.code = 'ETIMEDOUT';
             e.connect = r.socket && r.socket.readable === false;
-            dub.timeout = e;
+            dup.timeout = e;
             if (r) {
                 r.abort();
             }
