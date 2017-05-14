@@ -5,6 +5,8 @@ var through = require('through2');
 var duplexer = require('duplexer2');
 var bufferFrom = require('buffer-from');
 
+var Agent = require('agentkeepalive');
+
 module.exports = hyperquest;
 
 function bind (obj, fn) {
@@ -133,7 +135,7 @@ Req.prototype._send = function () {
         host: u.hostname,
         port: Number(u.port) || (protocol === 'https:' ? 443 : 80),
         path: u.path,
-        agent: this.options.agent || false,
+        agent: this.options.agent || (protocol === 'https:' ? new Agent.HttpsAgent() : new Agent()),
         headers: headers,
         withCredentials: this.options.withCredentials,
         localAddress: this.options.localAddress
