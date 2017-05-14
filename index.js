@@ -7,6 +7,9 @@ var bufferFrom = require('buffer-from');
 
 var Agent = require('agentkeepalive');
 
+var httpAgent = new Agent();
+var httpsAgent = new Agent.HttpsAgent();
+
 module.exports = hyperquest;
 
 function bind (obj, fn) {
@@ -135,7 +138,7 @@ Req.prototype._send = function () {
         host: u.hostname,
         port: Number(u.port) || (protocol === 'https:' ? 443 : 80),
         path: u.path,
-        agent: this.options.agent || (protocol === 'https:' ? new Agent.HttpsAgent() : new Agent()),
+        agent: this.options.agent || (protocol === 'https:' ? httpsAgent : httpAgent),
         headers: headers,
         withCredentials: this.options.withCredentials,
         localAddress: this.options.localAddress
