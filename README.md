@@ -1,4 +1,4 @@
-# hyperquest
+# teh a.k.a hyperquest
 
 treat http requests as a streaming transport
 

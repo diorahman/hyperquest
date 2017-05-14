@@ -1,6 +1,6 @@
 {
-  "name": "hyperquest",
-  "version": "2.1.2",
+  "name": "teh",
+  "version": "1.0.0",
   "description": "make streaming http requests",
   "main": "index.js",
   "dependencies": {
@@ -15,11 +15,6 @@
   "scripts": {
     "test": "tape test/*.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/substack/hyperquest.git"
-  },
-  "homepage": "https://github.com/substack/hyperquest",
   "keywords": [
     "stream",
     "http",
@@ -32,10 +27,18 @@
     "duplex",
     "pooling"
   ],
-  "author": {
-    "name": "James Halliday",
-    "email": "mail@substack.net",
-    "url": "http://substack.net"
+  "author": "Dhi Aurrahman <diorahman@rockybars.com>",
+  "license": "MIT",
+  "directories": {
+    "example": "example",
+    "test": "test"
   },
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diorahman/hyperquest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/diorahman/hyperquest/issues"
+  },
+  "homepage": "https://github.com/diorahman/hyperquest#readme"
 }
